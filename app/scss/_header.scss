@@ -25,21 +25,35 @@
                 margin-bottom: 5px;
             }
         }
+    }
 
-        &.open{
+    .overlay{
+        background-image: linear-gradient($DarkBlue, transparent);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 80.18px;
+        bottom: 0;
+    }
+
+    &.open{
+        .overlay{
+            display: block;
+            
+        }
+        .header__menu{
             > span:first-child{
                 transform: rotate(45deg);
             }
-
+        
             > span:nth-child(2){
                 opacity: 0;
             }
-
+        
             > span:last-child{
                 transform: rotate(-45deg);
             }
         }
-
     }
 
     
@@ -89,4 +103,10 @@
             opacity: 0.75;
         }
     }
+
+    
+
 }
+
+
+

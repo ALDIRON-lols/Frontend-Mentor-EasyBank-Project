@@ -75,13 +75,24 @@ button, .button {
 .header__menu > span:not(:last-child) {
   margin-bottom: 5px;
 }
-.header__menu.open > span:first-child {
+.header .overlay {
+  background-image: linear-gradient(hsl(233, 26%, 24%), transparent);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 80.18px;
+  bottom: 0;
+}
+.header.open .overlay {
+  display: block;
+}
+.header.open .header__menu > span:first-child {
   transform: rotate(45deg);
 }
-.header__menu.open > span:nth-child(2) {
+.header.open .header__menu > span:nth-child(2) {
   opacity: 0;
 }
-.header__menu.open > span:last-child {
+.header.open .header__menu > span:last-child {
   transform: rotate(-45deg);
 }
 .header__links a {
@@ -119,4 +130,39 @@ button, .button {
 }
 .header__cta:hover {
   opacity: 0.75;
+}
+
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  animation: fade-in 300ms ease-in-out forwards;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  99% {
+    opacity: 0;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.fade-out {
+  animation: fade-out 300ms ease-in-out forwards;
 }/*# sourceMappingURL=style.css.map */
