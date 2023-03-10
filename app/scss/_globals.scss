@@ -4,6 +4,11 @@ html{
     box-sizing: border-box;
 }
 
+.container{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
 *, *::before, *::after {
     box-sizing: inherit;
 }
@@ -16,6 +21,10 @@ body{
     font-weight: 300;
     color: $GrayishBlue;
     font-family: 'Outfit', sans-serif;
+
+    &.noScroll{
+        overflow: hidden;
+    }
 }
 
 a, a:visited, a:hover{

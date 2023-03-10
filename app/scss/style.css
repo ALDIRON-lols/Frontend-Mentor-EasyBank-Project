@@ -3,6 +3,11 @@ html {
   box-sizing: border-box;
 }
 
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 *, *::before, *::after {
   box-sizing: inherit;
 }
@@ -15,6 +20,9 @@ body {
   font-weight: 300;
   color: hsl(233, 8%, 62%);
   font-family: "Outfit", sans-serif;
+}
+body.noScroll {
+  overflow: hidden;
 }
 
 a, a:visited, a:hover {
@@ -57,13 +65,14 @@ button, .button {
 }
 
 .header nav {
-  padding: 1.0625rem 1.5rem;
+  padding-top: 1.0625rem;
+  padding-bottom: 1.0625rem;
 }
 .header__logo img {
   width: 8.8125rem;
   height: 1.375rem;
 }
-.header__menu > span {
+.header__toggle > span {
   display: block;
   width: 26px;
   height: 2px;
@@ -72,7 +81,7 @@ button, .button {
   transition: all 200ms ease-in-out;
   transform-origin: 3px 1px;
 }
-.header__menu > span:not(:last-child) {
+.header__toggle > span:not(:last-child) {
   margin-bottom: 5px;
 }
 .header .overlay {
@@ -82,17 +91,18 @@ button, .button {
   right: 0;
   top: 80.18px;
   bottom: 0;
+  opacity: 0;
 }
 .header.open .overlay {
   display: block;
 }
-.header.open .header__menu > span:first-child {
+.header.open .header__toggle > span:first-child {
   transform: rotate(45deg);
 }
-.header.open .header__menu > span:nth-child(2) {
+.header.open .header__toggle > span:nth-child(2) {
   opacity: 0;
 }
-.header.open .header__menu > span:last-child {
+.header.open .header__toggle > span:last-child {
   transform: rotate(-45deg);
 }
 .header__links a {
@@ -131,6 +141,22 @@ button, .button {
 .header__cta:hover {
   opacity: 0.75;
 }
+.header .menu {
+  background: hsl(0, 0%, 100%);
+  padding: 1.625rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  border-radius: 5px;
+  position: absolute;
+  width: calc(100% - 3rem);
+  margin-top: 2.5rem;
+}
+.header .menu a {
+  padding: 0.625rem;
+  color: hsl(233, 26%, 24%);
+  display: block;
+  text-align: center;
+}
 
 @keyframes fade-in {
   from {
@@ -143,6 +169,7 @@ button, .button {
   }
   to {
     opacity: 1;
+    visibility: visible;
   }
 }
 .fade-in {
@@ -165,4 +192,8 @@ button, .button {
 }
 .fade-out {
   animation: fade-out 300ms ease-in-out forwards;
+}
+
+.has-fade {
+  visibility: hidden;
 }/*# sourceMappingURL=style.css.map */

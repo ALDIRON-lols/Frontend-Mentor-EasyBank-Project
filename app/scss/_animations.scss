@@ -9,6 +9,7 @@
     }
     to{
         opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -33,4 +34,8 @@
 
 .fade-out{
     animation: fade-out 300ms ease-in-out forwards;
+}
+
+.has-fade{
+    visibility: hidden;
 }
